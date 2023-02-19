@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plot
+
 file = open("myheart.csv")
 next(file)
 # f.readlines()
@@ -104,6 +106,21 @@ def printDistribution(someDict,table_key,table_value):
         print(f"| {str(keys[i]).ljust(max_key_length)} | {str(values[i]).ljust(max_value_length)} |")
     print(f"+{'-' * (max_key_length + 2)}-{'-' * (max_value_length + 2)}+")
 
+def grafico_barras(titulo, eixo_x, eixo_y, data):
+    x_values = [str(key) for key in data.keys()]
+    y_values = data.values()
+    
+    barras = plot.bar(x_values, y_values)
+    plot.bar_label(barras, labels=y_values)
+
+    manager = plot.get_current_fig_manager()
+    manager.set_window_title(titulo)
+
+    plot.title(titulo)
+    plot.xlabel(eixo_x)
+    plot.ylabel(eixo_y)
+    
+    plot.show()
 
 distbyS()
 distbyEsc()

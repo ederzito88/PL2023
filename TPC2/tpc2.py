@@ -23,5 +23,15 @@ for line in fileinput.input():
             soma += list_to_int(ints_list)*on
             ints_list = []
             print("not")
+            if (c in ['o','f','n']): 
+                ops_list.append(c)
+                if (''.join(ops_list)) == 'off':
+                    on = 0
+                    print('desliguei')
+                    ops_list = []
+                if (''.join(ops_list)) == 'on':
+                    on = 1
+                    print('liguei')
+                    ops_list = []
 
     

@@ -6,7 +6,7 @@ next(file)
 data = []
 
 for line in file:
-  #line = line.strip()
+  #line = line.strip() not needed now because I started casting the elements
   values = line.split(',')
   tuple = (
       int(values[0]),
@@ -17,7 +17,8 @@ for line in file:
       bool(int(values[5]))
   )
   data.append(tuple)
-  
+ 
+#only while testing 
 #print(data)
 
 
@@ -30,6 +31,8 @@ def distbyS():
             ddistbyS[sexo]['sem_doenca'] += 1
 
   #print(ddistbyS)
+  
+  #Change for printing table with dictionary inside dictionary
   dict2 = {'M com doença': ddistbyS["M"]["com_doenca"],'M sem doença': ddistbyS["M"]["sem_doenca"],'F com doença': ddistbyS["F"]["com_doenca"],'F sem doença': ddistbyS["F"]["sem_doenca"]}
   printDistribution(dict2,"Sexo", "fa")
   

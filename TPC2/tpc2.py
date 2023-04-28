@@ -29,6 +29,7 @@ for line in fileinput.input():
             ints_list = []
             #print("not")
             if (c.lower() in ['o','f','n']): 
+                if (c.lower() == 'o'): ops_list = []
                 ops_list.append(c)
                 #print(''.join(ops_list).lower())
                 if (''.join(ops_list).lower()) == 'off':
